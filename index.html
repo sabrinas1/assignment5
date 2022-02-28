@@ -7,23 +7,23 @@
 <body>
     <script type="text/javascript">
         winner = [12, 15, 24, 35, 48];
-        win_string = winner.join(',');
+        win_string = winner.join(', ');
         winnerL = 3;
 
         nums = new Array(5);
 
         for (let index = 0; index < nums.length; index++) {
-            nums[index] = Math.random() * 47 + 1;
+            nums[index] = Math.floor(Math.random() * 47 + 1);
         }
 
-        lucky = Math.random() * 17 + 1;
+        lucky = Math.floor(Math.random() * 17 + 1);
 
-        nums_string = nums.join(',');
+        nums_string = nums.join(', ');
         document.write("My pick: " + nums_string + "lucky" + lucky + "<br/>");
 
         nums = nums.sort();
 
-        nums_string = nums.join(',');
+        nums_string = nums.join(', ');
         document.write("My pick sorted: " + nums_string + "lucky" + lucky + "<br/>");
 
         document.write("Winning Numbers: " + win_string + "lucky" + winnerL + "<br/>");
