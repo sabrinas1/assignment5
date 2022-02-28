@@ -21,7 +21,7 @@
         nums_string = nums.join(', ');
         document.write("My pick: " + nums_string + "lucky" + lucky + "<br/>");
 
-        nums = nums.sort();
+        nums = nums.sort((a, b) => a - b);
 
         nums_string = nums.join(', ');
         document.write("My pick sorted: " + nums_string + "lucky" + lucky + "<br/>");
