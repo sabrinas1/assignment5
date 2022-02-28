@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lottery Simulator</title>
+</head>
 
+<body>
+    <script type="text/javascript">
+        winner = [12, 15, 24, 35, 48];
+        win_string = winner.join(',');
+        winnerL = 3;
+
+        nums = new Array(5);
+
+        for (let index = 0; index < nums.length; index++) {
+            nums[index] = Math.random() * 47 + 1;
+        }
+
+        lucky = Math.random() * 17 + 1;
+
+        nums_string = nums.join(',');
+        document.write("My pick: " + nums_string + "lucky" + lucky + "<br/>");
+
+        nums = nums.sort();
+
+        nums_string = nums.join(',');
+        document.write("My pick sorted: " + nums_string + "lucky" + lucky + "<br/>");
+
+        document.write("Winning Numbers: " + win_string + "lucky" + winnerL + "<br/>");
+
+        counter = 0;
+        for (let index = 0; index < winner.length; index++) {
+            if (nums.includes(winner[index])) {
+                counter++;
+            }
+            
+        }
+
+        prize = [0, 0, 3, 20, 200, '25,000 a YEAR for LIFE'];
+        prizeL = [4, 6, 25, 150, 5000, '7,000 a WEEK for LIFE'];
+
+        document.write("Numbers matching: " + counter + "<br/>");
+
+        if (lucky == winnerL) {
+            document.write("Lucky ball matches <br/>");
+            document.write("Your winnings: $" + prizeL[counter] + "<br/>");
+        } else {
+            document.write("Lucky ball does not match <br/>");
+            document.write("Your winnings: $" + prize[counter] + "<br/>");
+        }
+
+
+    </script>
+</body>
+</html>
